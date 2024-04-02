@@ -1,0 +1,20 @@
+1. SQL Injection (js/sql-injection):
+• Multiple instances are reported where user-provided values are used directly in SQL queries without proper sanitization or parameterization.
+• This vulnerability is highly exploitable as attackers can manipulate the SQL queries to access, modify, or delete sensitive data from the database.
+• The cost of addressing this vulnerability is relatively low. It requires properly sanitizing user inputs and using parameterized queries or prepared statements to prevent SQL injection attacks.
+• SQL injection is considered a severe vulnerability as it can lead to unauthorized access, data breaches, and compromised database integrity.
+• To fix this, the development team should review all instances where user inputs are used in SQL queries and ensure proper input validation and the use of parameterized queries.
+
+2. Missing Rate Limiting (js/missing-rate-limiting):
+• The report highlights route handlers that perform file system access or authorization without any rate limiting mechanism in place.
+• This vulnerability can be exploited by attackers to launch Denial-of-Service (DoS) attacks by overwhelming the server with a high volume of requests.
+• Implementing rate limiting requires some effort to determine appropriate rate limits, track and throttle requests, and handle rate-limited responses gracefully.
+• The severity of this vulnerability depends on the criticality of the affected routes and the potential impact of a DoS attack on the system's availability.
+• The development team should assess the identified routes and implement suitable rate limiting mechanisms to prevent abuse and ensure the system's stability.
+
+3. Reflected Cross-Site Scripting (XSS) (js/reflected-xss):
+The report identifies instances where user-provided values are directly included in the server's response without proper encoding or validation.
+Reflected XSS vulnerabilities can be exploited by attackers to inject malicious scripts into the application's pages, leading to unauthorized actions or theft of sensitive user information.
+Addressing reflected XSS vulnerabilities requires proper encoding or sanitization of user-provided values before including them in the server's response.
+The severity of reflected XSS depends on the sensitivity of the data handled by the affected pages and the potential impact on user security.
+The development team should review the identified instances and implement appropriate encoding or validation techniques to prevent XSS attacks.
